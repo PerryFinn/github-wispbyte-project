@@ -24574,5 +24574,6 @@ var index_default = openapi;
 var userRoute = new Elysia({ prefix: "api" }).get("/user/:id", ({ params: { id } }) => id);
 
 // src/index.ts
-var app = new Elysia().use(index_default()).use(userRoute).get("/", () => "Hello Elysia").listen(3000);
+console.log("process.env.PORT :>> ", process.env.PORT);
+var app = new Elysia().use(index_default()).use(userRoute).get("/", () => "Hello Elysia").listen(process.env.PORT ?? 3000);
 console.log(`\uD83E\uDD8A Elysia is running at ${app.server?.hostname}:${app.server?.port}`);
