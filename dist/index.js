@@ -24575,5 +24575,8 @@ var userRoute = new Elysia({ prefix: "api" }).get("/user/:id", ({ params: { id }
 
 // src/index.ts
 console.log("process.env :>> ", process.env);
-var app = new Elysia().use(index_default()).use(userRoute).get("/", () => "Hello Elysia").listen(process.env.PORT ?? 3000);
+var app = new Elysia().use(index_default()).use(userRoute).get("/", () => "Hello Elysia").listen({
+  port: process.env.SERVER_PORT ?? 3000,
+  hostname: "0.0.0.0"
+});
 console.log(`\uD83E\uDD8A Elysia is running at ${app.server?.hostname}:${app.server?.port}`);
