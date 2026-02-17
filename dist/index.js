@@ -24574,7 +24574,6 @@ var index_default = openapi;
 var userRoute = new Elysia({ prefix: "api" }).get("/user/:id", ({ params: { id } }) => id);
 
 // src/index.ts
-console.log("process.env :>> ", process.env);
 var app = new Elysia().use(index_default()).use(userRoute).get("/", () => "Hello Elysia").listen({
   port: process.env.SERVER_PORT ?? 3000,
   hostname: "0.0.0.0"
