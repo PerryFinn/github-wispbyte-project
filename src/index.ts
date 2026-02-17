@@ -2,7 +2,7 @@ import openapi from '@elysiajs/openapi';
 import { Elysia } from 'elysia';
 import { userRoute } from './user-route';
 
-console.log('process.env.PORT :>> ', process.env.PORT);
+console.log('process.env :>> ', process.env);
 const app = new Elysia()
   .use(openapi())
   .use(userRoute)
